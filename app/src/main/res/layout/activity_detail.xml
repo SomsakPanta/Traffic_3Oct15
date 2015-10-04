@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:text="BACK"
         android:id="@+id/btnDetailBack"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:onClick="clickBack"/>
 
 </RelativeLayout>

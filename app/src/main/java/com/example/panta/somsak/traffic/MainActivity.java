@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createListView() {
     //กำหนด String of picture เพื่ออธิบายภาพ
-        String[] strTitle = new String[20];
+        final String[] strTitle = new String[20];
         strTitle[0] = "ห้ามเลี้ยวซ้าย";
         strTitle[1] = "ห้ามเลี้ยวขวา";
         strTitle[2] = "ตรงไป";
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         strTitle[19] = "จำกัดความสูง 5 เมตร";
 
         //Source of picture
-        int[] intIcon = {R.drawable.traffic_01, R.drawable.traffic_02, R.drawable.traffic_03,
+        final int[] intIcon = {R.drawable.traffic_01, R.drawable.traffic_02, R.drawable.traffic_03,
                 R.drawable.traffic_04, R.drawable.traffic_05, R.drawable.traffic_06,
                 R.drawable.traffic_07, R.drawable.traffic_08, R.drawable.traffic_09,
                 R.drawable.traffic_10, R.drawable.traffic_11, R.drawable.traffic_12,
@@ -75,6 +75,15 @@ public class MainActivity extends AppCompatActivity {
         trafficListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                //Intent to DetailActivity
+
+                Intent objIntent = new Intent(MainActivity.this,DetailActivity.class);
+                objIntent.putExtra("Title",strTitle[position]);
+                objIntent.putExtra("Image", intIcon[position]);
+                objIntent.putExtra("index", position);
+                startActivity(objIntent);
 
             } //Even on Item click
         });
