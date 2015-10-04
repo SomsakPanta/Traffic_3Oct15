@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }   //End Main Method onCreate
 
     private void createListView() {
-//Defind String of picture
+    //กำหนด String of picture เพื่ออธิบายภาพ
         String[] strTitle = new String[20];
         strTitle[0] = "ห้ามเลี้ยวซ้าย";
         strTitle[1] = "ห้ามเลี้ยวขวา";
